@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
@@ -15,6 +16,49 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button button1 = (Button) this.findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch the Popular Movies App.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button button2 = (Button) this.findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch the Football Scores App.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button button3 = (Button) this.findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch the Library App.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button button4 = (Button) this.findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch the Build It Bigger App.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button button5 = (Button) this.findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch the XYZ Reader App.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button button6 = (Button) this.findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //create the toast object, set display duration,
+                Toast.makeText(getApplicationContext(), "This button will launch my own app.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -39,41 +83,5 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /** Called when the user touches the button */
-    public void showToast(View views) {
-        // Do something in response to button click
 
-
-        switch (views.getId()) {
-            case R.id.button1:
-                displayToast("This button will launch the Popular Movies App!");
-                break;
-            case R.id.button2:
-                displayToast("This button will launch the Football Scores App!");
-                break;
-            case R.id.button3:
-                displayToast("This button will launch the Library App!");
-                break;
-            case R.id.button4:
-                displayToast("This button will launch the Build It Bigger App!");
-                break;
-            case R.id.button5:
-                displayToast("This button will launch the XYZ Reader");
-                break;
-            case R.id.button6:
-                displayToast("My Own App!");
-                break;
-        }
-
-
-
-    }
-
-    public void displayToast(String text){
-        Context context = getApplicationContext();
-        int duration;
-        duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
-    }
 }
